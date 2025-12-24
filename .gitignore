@@ -1,26 +1,33 @@
-# Node modules
+# Dependencies
 node_modules/
 
-# Logs
-*.log
-npm-debug.log*
+# Build outputs
+dist/
+out/
+build/
 
 # OS files
 .DS_Store
 Thumbs.db
+*.log
 
 # IDE
-.vscode/
 .idea/
+.vscode/
+*.swp
+*.swo
 
-# Build files
-dist/
-build/
+# Electron cache/data (stored in user's .config, not in project)
 
-# Environment
+# Environment and secrets (none currently used, but for safety)
 .env
 .env.local
+.env.*.local
+*.key
+*.pem
+secrets/
 
 # Backup files
 *.backup
-old/
+*.bak
+*~

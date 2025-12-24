@@ -46,7 +46,7 @@ npm install
 Run the launcher script:
 
 ```bash
-./start_hud.sh
+./platforms/linux/start_hud.sh
 ```
 
 Or manually:
@@ -57,7 +57,7 @@ npm start
 
 ### Windows
 
-Double-click `start_hud.vbs` to launch the HUD without a console window.
+Double-click `platforms/windows/start_hud.vbs` to launch the HUD without a console window.
 
 Or manually:
 
@@ -65,14 +65,21 @@ Or manually:
 npm start
 ```
 
-## Files
+## Project Structure
 
-- `BTCMarkets_XRP_HUD.py` - Main React component with price fetching logic
-- `index.html` - Main HTML file for the Electron window
-- `main.js` - Electron main process configuration
-- `package.json` - Node.js dependencies and scripts
-- `start_hud.sh` - Linux launcher script
-- `start_hud.vbs` - Windows launcher script (no console)
+```
+XRP-HUD/
+├── index.html              # Main React app with price display
+├── main.js                 # Electron main process configuration
+├── package.json            # Node.js dependencies and scripts
+├── README.md               # This file
+├── BTCMarkets_XRP_HUD_Component.jsx  # Standalone React component (reference)
+└── platforms/
+    ├── linux/
+    │   └── start_hud.sh    # Linux launcher script
+    └── windows/
+        └── start_hud.vbs   # Windows launcher script (no console)
+```
 
 ## Configuration
 
@@ -92,7 +99,7 @@ The app fetches data from:
 - BTC Markets Ticker API: `https://api.btcmarkets.net/v3/markets/XRP-AUD/ticker`
 - BTC Markets Candles API: `https://api.btcmarkets.net/v3/markets/XRP-AUD/candles`
 
-Update interval: 60 seconds (configurable in `BTCMarkets_XRP_HUD.py` line 14)
+Update interval: 60 seconds (configurable in `index.html`)
 
 ## Right-Click Menu
 
